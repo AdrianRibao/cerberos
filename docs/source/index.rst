@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-cerberos documentation
+Cerberos documentation
 ======================
 
 Cerberos is a django app that watches failed logins and block the user after N attempts.
