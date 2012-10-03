@@ -6,7 +6,7 @@
 cerberos documentation
 ======================
 
-Cerberos is a django app that takes care of failed logins.
+Cerberos is a django app that watches failed logins and block the user after N attempts.
 
 When a user have tried to login a certain number of times, cerberos blocks the login view to the user.
 
