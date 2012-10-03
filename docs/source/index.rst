@@ -19,7 +19,13 @@ Intallation is very simple:
 
     pip install cerberos
 
-After that, just add ``'cerberos'`` to ``INSTALLED_APPS``
+After that, add ``'cerberos'`` to ``INSTALLED_APPS``
+
+and run the migrations
+
+.. code::
+
+    python manage.py migrate cerberos
 
 Usage
 =====
