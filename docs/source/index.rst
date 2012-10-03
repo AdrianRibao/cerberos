@@ -8,31 +8,23 @@ cerberos documentation
 
 Cerberos is a django app that takes care of failed logins.
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
+When a user have tried to login a certain number of times, cerberos blocks the login view to the user.
 
 Installation
 ============
+
+Intallation is very simple:
 
 .. code::
 
     pip install cerberos
 
-Add ``'cerberos'`` to ``INSTALLED_APPS``
-
-Add the URLs to urls.py:
-
-.. code::
-
-    # Django users
-    url(r'^cerberos/', include('cerberos.urls')),
+After that, just add ``'cerberos'`` to ``INSTALLED_APPS``
 
 Usage
 =====
 
-To enable cerberos the login view must be decorated with cerberos.decorators.watch_logins.
+To enable cerberos the login view must be decorated with ``cerberos.decorators.watch_logins``.
 
 Example:
 
@@ -43,22 +35,16 @@ Example:
     # Login view
     url(r'^login/', watch_logins(login)),
 
-When the user is locked, it renders the template cerberos/user-locked.html. You can override the template to show the users the information you want.
+When the user is locked, it renders the template ``cerberos/user-locked.html``. You can override the template to show the users the information you want.
+
 These parameters are passed to the template:
 
-ip: The ip address of the user locked
-failed_access: The FailedAccessAttempt instance
+* **ip**: The ip address of the user locked
+* **failed_access**: The ``FailedAccessAttempt`` instance
 
 Settings
 ========
 
-MAX_FAILED_LOGINS: The maximum number of failed logins before blocking the user.
-MEMORY_FOR_FAILED_LOGINS: The number in seconds after the failed access attemps will be forgotten. If set to 0, the attempts won't be forgotten. Default = 0
+*MAX_FAILED_LOGINS:* The maximum number of failed logins before blocking the user.
 
-Indexes and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+*MEMORY_FOR_FAILED_LOGINS:* The number in seconds after the failed access attemps will be forgotten. If set to 0, the attempts won't be forgotten. Default = 0
