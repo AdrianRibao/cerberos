@@ -21,9 +21,9 @@ if sys.argv[-1] == 'publish':
 setup(
     name='cerberos',
     version=version,
-    description='',
+    description='Cerberos is a django app that watches failed logins and block the user after N attempts.',
     author='Adrián Ribao',
-    url='',
+    url='https://github.com/AdrianRibao/cerberos',
     packages = find_packages(exclude=['tests', 'tests.*']),
     include_package_data = True,
     license='BSD',

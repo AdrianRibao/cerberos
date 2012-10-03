@@ -48,3 +48,10 @@ Settings
 *MAX_FAILED_LOGINS:* The maximum number of failed logins before blocking the user.
 
 *MEMORY_FOR_FAILED_LOGINS:* The number in seconds after the failed access attemps will be forgotten. If set to 0, the attempts won't be forgotten. Default = 0
+
+CONTRIBUTE
+==========
+
+Cerberos is hosted at github: https://github.com/AdrianRibao/cerberos
+
+Feel free to send us your comments, ideas and pull request.
