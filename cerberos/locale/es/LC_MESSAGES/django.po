@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-03 15:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Adrián Ribao <adrian@adrima.es>\n"
+"Language-Team: Cerberos <adrian@adrima.es>\n"
+"Language: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: admin.py:40
+msgid "Lock the users"
+msgstr "Bloquea a los usuarios"
+
+#: admin.py:44
+msgid "Unlock the users"
+msgstr "Desbloquea a los usuarios"
+
+#: models.py:14
+msgid "Site"
+msgstr "Sitio"
+
+#: models.py:15
+msgid "IP Address"
+msgstr "Dirección IP"
+
+#: models.py:16
+msgid "User Agent"
+msgstr "User Agent"
+
+#: models.py:17
+msgid "User agent used in the login attempt"
+msgstr "User agent usado en el intento de login"
+
+#: models.py:18
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: models.py:19
+msgid "Username used to login"
+msgstr "Nombre de usuario introducido"
+
+#: models.py:20
+msgid "Failed logins"
+msgstr "Accesos denegados"
+
+#: models.py:21
+msgid "Failed logins for this IP"
+msgstr "Accesos denegados para esta IP"
+
+#: models.py:22
+msgid "Locked"
+msgstr "Bloqueado"
+
+#: models.py:23
+msgid "Indicates if the IP has been locked out."
+msgstr "Indica si la IP ha sido bloqueada"
+
+#: models.py:31
+msgid "Failed access attempt"
+msgstr "Intento de acceso fallido"
+
+#: models.py:32
+msgid "Failed access attempts"
+msgstr "Intentos de acceso fallidos"
+
+#: models.py:56
+msgid "Not locked yet"
+msgstr "No está bloqueado"
+
+#: models.py:58
+msgid "Infinite"
+msgstr "Infinito"
+
+#: models.py:60
+msgid "Forgotten"
+msgstr "Olvidado"
+
+#: models.py:62
+#, python-format
+msgid "%(time_remaining)s seconds"
+msgstr "%(time_remaining)s segundos"
+
+#: models.py:63
+msgid "Time to forget"
+msgstr "Tiempo para olvidarlo"
+
+#: templates/cerberos/user-locked.html:5
+msgid "Access locked"
+msgstr "Acceso bloqueado"
+
+#: templates/cerberos/user-locked.html:7
+#, python-format
+msgid ""
+"The access to the site has been locked because you had more than "
+"%(retries)s \n"
+"    failed access attempts."
+msgstr ""
+"El acceso a este sitio ha sido bloqueado porque ha el acceso ha fallado más de "
+"%(retries)s \n"
+"    veces."
+
+#: templates/cerberos/user-locked.html:9
+
+#, python-format
+msgid "Your IP %(ip)s has been logged."
+msgstr "Su IP %(ip)s ha sido registrada."
