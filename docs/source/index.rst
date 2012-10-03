@@ -21,7 +21,7 @@ Intallation is very simple:
 
 After that, add ``'cerberos'`` to ``INSTALLED_APPS``
 
-and run the migrations
+and run the migrations:
 
 .. code::
 
