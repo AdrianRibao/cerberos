@@ -1,0 +1,13 @@
+dist
+build
+*.pyc
+.project
+.pydevproject
+*.swp
+env/
+.ropeproject
+.sass-cache
+.coverage
+.noseids
+/docs/build
+*egg-info
