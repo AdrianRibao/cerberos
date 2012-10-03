@@ -72,7 +72,7 @@ def check_failed_login(request, response, failed_access):
             # Lock the user
             failed_access.locked = True
         failed_access.save()
-    elif request.method == 'POST' and response.status_code == 302:
+    elif request.method == 'POST' and response.status_code == 302 and failed_access.id:
         # The user logged in successfully. Forgets about the access attempts
         failed_access.delete()
 
