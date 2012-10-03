@@ -32,8 +32,21 @@ Add the URLs to urls.py:
 Usage
 =====
 
+To enable cerberos the login view must be decorated with cerberos.decorators.watch_logins.
+
+Example:
+
+.. code::
+
+    from django.contrib.auth.views import login
+
+    # Login view
+    url(r'^login/', watch_logins(login)),
+
 Settings
 ========
+
+MAX_FAILED_LOGINS: The maximum number of failed logins before blocking the user.
 
 Indexes and tables
 ==================

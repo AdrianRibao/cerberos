@@ -10,12 +10,12 @@ class FailedAccessAttempt(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     site = models.ForeignKey(Site, verbose_name=_(u'Site'))
-    ip_address = models.IPAddressField(verbose_name=_(u'IP Address'), null=True)
+    ip_address = models.IPAddressField(verbose_name=_(u'IP Address'), null=True, db_index=True)
     user_agent = models.CharField(max_length=255, verbose_name=_(u'User Agent'), blank=False,
             help_text=_(u'User agent used in the login attempt'))
-    username = models.CharField(max_length=255, verbose_name=_(u'Username'), blank=False,
+    username = models.CharField(max_length=255, verbose_name=_(u'Username'), blank=False, db_index=True,
             help_text=_(u'Username used to login'))
-    failed_logins = models.PositiveIntegerField(verbose_name=_(u'Failed logins'),
+    failed_logins = models.PositiveIntegerField(verbose_name=_(u'Failed logins'), default=0,
             help_text=_(u'Failed logins for this IP'))
 
     get_data = models.TextField('GET Data')
