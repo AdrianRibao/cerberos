@@ -43,10 +43,17 @@ Example:
     # Login view
     url(r'^login/', watch_logins(login)),
 
+When the user is locked, it renders the template cerberos/user-locked.html. You can override the template to show the users the information you want.
+These parameters are passed to the template:
+
+ip: The ip address of the user locked
+failed_access: The FailedAccessAttempt instance
+
 Settings
 ========
 
 MAX_FAILED_LOGINS: The maximum number of failed logins before blocking the user.
+MEMORY_FOR_FAILED_LOGINS: The number in seconds after the failed access attemps will be forgotten. If set to 0, the attempts won't be forgotten. Default = 0
 
 Indexes and tables
 ==================

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h2>{% trans "Access locked" %}</h2>
+
+    <p>{% blocktrans with failed_access.failed_logins as retries %}The access to the site has been locked because you had more than {{ retries }} 
+    failed access attempts.{% endblocktrans %}</p>
+    <p>{% blocktrans with ip as ip %}Your IP {{ ip }} has been logged.{% endblocktrans %}</p>
+{% endblock %}
