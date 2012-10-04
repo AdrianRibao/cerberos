@@ -12,7 +12,6 @@ class FailedAccessAttemptAdmin(admin.ModelAdmin):
             'user_agent',
             'failed_logins',
             'get_time_to_forget_text',
-            'get_time_to_forget',
             'site',
             ]
     list_filter = [
