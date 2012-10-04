@@ -24,7 +24,7 @@ class FailedAccessAttempt(models.Model):
 
     get_data = models.TextField('GET Data')
     post_data = models.TextField('POST Data')
-    http_accept = models.CharField('HTTP Accept', max_length=255)
+    http_accept = models.TextField('HTTP Accept')
     path_info = models.CharField('Path', max_length=255)
 
     class Meta:
