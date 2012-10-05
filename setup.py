@@ -17,6 +17,18 @@ if sys.argv[-1] == 'publish':
     print "  git push --tags"
     sys.exit()
 
+CLASSIFIERS = [
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Web Environment',
+    'Framework :: Django',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: BSD License',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+    'Topic :: Software Development',
+    'Topic :: Software Development :: Libraries :: Application Frameworks',
+]
 
 setup(
     name='cerberos',
@@ -27,4 +39,8 @@ setup(
     packages = find_packages(exclude=['tests', 'tests.*']),
     include_package_data = True,
     license='BSD',
+    platforms=['OS Independent'],
+    classifiers=CLASSIFIERS,
+    install_requires=[
+    ],
 )
