@@ -10,7 +10,7 @@ import datetime
 
 try:
     from django.utils import timezone
-else:
+except ImportError:
     from datetime import datetime as timezone
 
 class FailedAccessAttempt(models.Model):
