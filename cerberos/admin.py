@@ -9,6 +9,7 @@ class FailedAccessAttemptAdmin(admin.ModelAdmin):
             'ip_address',
             'username',
             'locked',
+            'expired',
             'user_agent',
             'failed_logins',
             'get_time_to_forget_text',
@@ -16,6 +17,7 @@ class FailedAccessAttemptAdmin(admin.ModelAdmin):
             ]
     list_filter = [
             'locked',
+            'expired',
             'site',
             ]
     search_fields = [
@@ -25,7 +27,7 @@ class FailedAccessAttemptAdmin(admin.ModelAdmin):
             ]
     fieldsets = (
         ('Main data', {
-            'fields': ('site', 'ip_address', 'username', 'locked', 'failed_logins', )
+            'fields': ('site', 'ip_address', 'username', 'locked', 'expired', 'failed_logins', )
         }),
         ('Data recollected', {
             #'classes': ('collapse',),

@@ -27,15 +27,16 @@ def get_failed_access(ip):
     Returns the FailedAccessAttempt object for a given IP.
     """
     try:
-        failed_access = FailedAccessAttempt.objects.get(ip_address=ip)
+        failed_access = FailedAccessAttempt.objects.get(ip_address=ip, expired=False)
     except FailedAccessAttempt.DoesNotExist:
         failed_access = None
 
     if failed_access:
         time_remaining = failed_access.get_time_to_forget()
         if time_remaining != None and time_remaining <= 0:
-            failed_access.delete()
-            failed_access = None
+            failed_access.expired = True
+            failed_access.save()
+            return None
 
     return failed_access
 
@@ -72,9 +73,10 @@ def check_failed_login(request, response, failed_access):
             # Lock the user
             failed_access.locked = True
         failed_access.save()
-    elif request.method == 'POST' and response.status_code == 302 and failed_access.id:
+    elif request.method == 'POST' and response.status_code == 302 and failed_access.id and not failed_access.locked:
         # The user logged in successfully. Forgets about the access attempts
-        failed_access.delete()
+        failed_access.expired = True
+        failed_access.save()
 
     return failed_access
 

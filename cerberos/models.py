@@ -26,6 +26,8 @@ class FailedAccessAttempt(models.Model):
             help_text=_(u'Failed logins for this IP'))
     locked = models.BooleanField(verbose_name=_(u'Locked'), default=False, db_index=True,
             help_text=_(u'Indicates if the IP has been locked out.'))
+    expired = models.BooleanField(verbose_name=_(u'Expired'), default=False, 
+            help_text=_(u'Indicates if the timeout has expired.'))
 
     get_data = models.TextField('GET Data')
     post_data = models.TextField('POST Data')
