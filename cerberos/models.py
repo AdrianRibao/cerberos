@@ -8,6 +8,11 @@ from django.utils.translation import ugettext_lazy as _
 from cerberos.settings import MEMORY_FOR_FAILED_LOGINS
 import datetime
 
+try:
+    from django.utils import timezone
+else:
+    from datetime import datetime as timezone
+
 class FailedAccessAttempt(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
@@ -39,7 +44,7 @@ class FailedAccessAttempt(models.Model):
         Returns the time until this access attempt is forgotten.
         """
         if MEMORY_FOR_FAILED_LOGINS > 0:
-            now = datetime.datetime.now()
+            now = timezone.now()
             delta = now - self.modified
             time_remaining = MEMORY_FOR_FAILED_LOGINS - delta.seconds
             return time_remaining
