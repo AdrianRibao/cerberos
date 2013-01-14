@@ -5,9 +5,21 @@ import os
 import sys
 import subprocess
 from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
 
 
 version = '0.2.0'
+
+class Tox(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+    def run_tests(self):
+        #import here, cause outside the eggs aren't loaded
+        import tox
+        errno = tox.cmdline(self.test_args)
+        sys.exit(errno)
 
 
 if sys.argv[-1] == 'publish':
@@ -41,6 +53,8 @@ setup(
     license='BSD',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
+    tests_require=['tox'],
+    cmdclass = {'test': Tox},
     install_requires=[
     ],
 )

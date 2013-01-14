@@ -55,6 +55,15 @@ Settings
 
 *MEMORY_FOR_FAILED_LOGINS:* The number in seconds after the failed access attemps will be forgotten. If set to 0, the attempts won't be forgotten. Default = 0
 
+Testing
+=======
+
+For running the tests, make sure tox is installed in your system, and run:
+
+.. code::
+
+    python setup.py test
+
 CONTRIBUTE
 ==========
 

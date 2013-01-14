@@ -11,3 +11,4 @@ env/
 .noseids
 /docs/build
 *egg-info
+.tox
