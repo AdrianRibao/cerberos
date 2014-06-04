@@ -1,4 +1,5 @@
 recursive-include docs *
 recursive-include cerberos/locale *
 recursive-include cerberos/templates *
+recursive-include testapp/templates *
 prune docs/build
