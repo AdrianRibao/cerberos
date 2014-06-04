@@ -52,6 +52,7 @@ setup(
     version=version,
     description='Cerberos is a django app that watches failed logins and block the user after N attempts.',
     author='Adrián Ribao',
+    author_email='adrian@adrima.es',
     url='https://github.com/AdrianRibao/cerberos',
     packages = find_packages(exclude=['tests', 'tests.*']),
     include_package_data = True,
